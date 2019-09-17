@@ -13,6 +13,7 @@ class MainComponent extends Component {
   }
 
   handleClick = () => {
+    this.setState({ pagina: 1 });
     const promesa1 = fetch(this.state.url,
       {
         headers: {
@@ -35,6 +36,8 @@ class MainComponent extends Component {
   }
 
   handleClick2 = () => {
+
+    this.setState({ pidioPaginas: false });
 
     const promesa1 = fetch(this.state.url + "?$select=count(*)",
       {
@@ -145,13 +148,15 @@ class MainComponent extends Component {
         <input ref={myIn => this.myIn = myIn} type="text" placeholder="url" value={this.state.url} onChange={this.handleChange.bind(this)} />
         <button onClick={this.handleClick}>Traer Datos</button>
         <button onClick={this.handleClick2}>Traer Todos los Datos</button>
-        <p>NOTA: si deseas que la consulta sea mas rapida oprime el boton de traer datos. Esto te mostrara los primeros 1000 datos. Si queres visualizar todo, oprime Traer Todos los dtaos</p>
+        <p>NOTA: si deseas que la consulta sea mas rapida oprime el boton de traer datos. Esto te mostrara paginas de 1000 datos y podra ir avanzando en las paginas. Ten en cuenta que si una pagina le sale vacia es porque el set de datos que escogio ya no tiene mas datos. Si queres visualizar todo, oprime Traer Todos los datos</p>
         <Navio data={this.state.data}></Navio>
         {this.state.pidioPaginas &&
           <React.Fragment>
             <h1>Pagina</h1>
             <h3>{this.state.pagina}</h3>
-            <button onClick={this.anterior}>Anterior</button>
+            {(this.state.pagina > 1) &&
+              <button onClick={this.anterior}>Anterior</button>
+            }
             <button onClick={this.siguiente}>Siguiente</button>
           </React.Fragment>
         }
