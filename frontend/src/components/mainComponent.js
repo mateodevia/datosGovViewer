@@ -5,12 +5,13 @@ class MainComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: ""
+      url: "",
+      data: {}
     };
   }
 
-  handleSubmit = (url) => {
-    const promesa1 = fetch(url,
+  handleClick = () => {
+    const promesa1 = fetch(this.state.url,
       {
         headers: {
           "Content-Type": "application/json"
@@ -26,7 +27,7 @@ class MainComponent extends Component {
     });
 
     promesa2.then((res) => {
-      console.log(res);
+      this.state.data = res;
     });
 
     promesa2.catch((err) => {
@@ -44,7 +45,8 @@ class MainComponent extends Component {
     return (
       <React.Fragment>
         <input ref={myIn => this.myIn = myIn} type="text" placeholder="url" value={this.state.url} onChange={this.handleChange.bind(this)} />
-        <Navio url={this.state.url}></Navio>
+        <button onClick={this.handleClick}></button>
+        <Navio data={this.state.data}></Navio>
       </React.Fragment>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import navio from "navio";
 
 class Navio extends Component {
   constructor(props) {
@@ -6,8 +7,15 @@ class Navio extends Component {
     this.state = {}
   }
 
+  nv = navio(this.myDiv, 600);
+  nv.data(this.props.data);
+
   render() {
-    return (<h1>Hola</h1>);
+    return (
+      <div ref={myDiv => this.myDiv = myDiv}>
+
+      </div>
+    );
   }
 }
 
