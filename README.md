@@ -15,7 +15,7 @@ This project uses React, npm, eslint, and navio.
 
 In the project directory, you can run:
 
-### `npm instal`
+### `npm install`
 Downloads all the dependencies.
 
 ### `npm start`
@@ -30,21 +30,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 
-
-The backend is already configured to serve this buil folder.
-The repo already contains a build example that ir ready for deployment.
-
 ## Deployment
 
 You can find a deployed version of the project at https://datosgovview.herokuapp.com/
 
 
-### Author
+## Author
 
 * [__Mateo Devia__](https://github.com/mateodevia)
 
 
-### Message for the Teacher
+## Message for the Teacher
 This is a message exclusively to my web development teacher.
 
 Hello John, I am sending this around 7:00pm on tuesday. Therefore, I am applying to the second deliverable version (exam+bonus+deployment). My creative component is the pages. When the user requests the dataset normally (just the first 1000 registers), I added extra buttons to navigate through the dataset. The "siguiente" and "anterior" buttons allow the user to query the next 1000 registers or the previous 1000 registers.
