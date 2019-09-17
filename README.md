@@ -6,15 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is a project that allows the  user to view datasets taken from https://datos.gov.co
 
+## Used Tecnologies
+
+This project uses React, npm, eslint, and navio.
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### Instalar Dependencias
-### `cd frontend`
 ### `npm instal`
+Downloads all the dependencies.
 
-### `cd frontend` (if you are not already in that folder)
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -31,8 +33,23 @@ The build is minified and the filenames include the hashes.<br>
 The backend is already configured to serve this buil folder.
 The repo already contains a build example that ir ready for deployment.
 
+## Deployment
+
+You can find a deployed version of the proyect at https://datosgovview.herokuapp.com/
+
+
+### Author
+
+* [__Mateo Devia__](https://github.com/mateodevia)
+
+
+### Message for the Teacher
+This is a message exclusively to my web development teacher.
+
+Hello John, I am sending this around 6:30 on tuesday. Therefore, I am applying to the second deliverable version (exam+bonus+deployment). My creative component is the pages. When the user requests the dataset normally (just the first 1000 registers) I added extra buttons to navigate through the dataset. The "siguiente" and "anterior" buttons allow the user to query the next 1000 registers or the previous 1000 registers.
+
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository has the standard MIT license. You can find it [here.](https://github.com/mateodevia/datosGovViewer /blob/master/LICENSE)
+This repository has the standard MIT license. You can find it [here.](https://github.com/mateodevia/datosGovViewer/blob/master/LICENSE)
