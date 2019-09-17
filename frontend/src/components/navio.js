@@ -7,8 +7,12 @@ class Navio extends Component {
     this.state = {}
   }
 
-  nv = navio(this.myDiv, 600);
-  nv.data(this.props.data);
+  componentDidMount() {
+    console.log("DATA", this.props.data);
+    let nv = navio(this.myDiv, 600);
+    nv.data(this.props.data);
+    nv.addAllAttribs();
+  }
 
   render() {
     return (

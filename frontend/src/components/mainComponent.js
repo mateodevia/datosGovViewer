@@ -5,12 +5,14 @@ class MainComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "",
-      data: {}
+      url: "https://www.datos.gov.co/resource/hiku-z4v3.json",
+      data: [],
+      cargo: false
     };
   }
 
   handleClick = () => {
+    this.state.cargo = true;
     const promesa1 = fetch(this.state.url,
       {
         headers: {
@@ -27,7 +29,9 @@ class MainComponent extends Component {
     });
 
     promesa2.then((res) => {
-      this.state.data = res;
+      console.log(res);
+
+      this.setState({ data: res });
     });
 
     promesa2.catch((err) => {
@@ -45,8 +49,10 @@ class MainComponent extends Component {
     return (
       <React.Fragment>
         <input ref={myIn => this.myIn = myIn} type="text" placeholder="url" value={this.state.url} onChange={this.handleChange.bind(this)} />
-        <button onClick={this.handleClick}></button>
-        <Navio data={this.state.data}></Navio>
+        <button onClick={this.handleClick}>Traer Datos</button>
+        {this.state.cargo &&
+          <Navio data={this.state.data}></Navio>
+        }
       </React.Fragment>
     );
   }
