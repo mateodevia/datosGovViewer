@@ -10,7 +10,11 @@ This is a project that allows the  user to view datasets taken from https://dato
 
 In the project directory, you can run:
 
+### Instalar Dependencias
 ### `cd frontend`
+### `npm instal`
+
+### `cd frontend` (if you are not already in that folder)
 ### `npm start`
 
 Runs the app in the development mode.<br>
