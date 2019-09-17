@@ -1,0 +1,10 @@
+.botonBonito {
+  border-radius: 20px;
+	border: 1px solid #2214a0;
+	background-color: #2214a0;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+  padding: 12px 45px;
+  margin: 10px;
+}

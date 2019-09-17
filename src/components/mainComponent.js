@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navio from "./navio";
+import "./styles/styles.css";
 
 class MainComponent extends Component {
   constructor(props) {
@@ -146,18 +147,18 @@ class MainComponent extends Component {
         <h1>Bienvenido a Datos Gov View</h1>
         <h3>Por favor ingresa el link del data set que deseas visualizar y nosotros haremos el resto</h3>
         <input ref={myIn => this.myIn = myIn} type="text" placeholder="url" value={this.state.url} onChange={this.handleChange.bind(this)} />
-        <button onClick={this.handleClick}>Traer Datos</button>
-        <button onClick={this.handleClick2}>Traer Todos los Datos</button>
-        <p>NOTA: si deseas que la consulta sea mas rapida oprime el boton de traer datos. Esto te mostrara paginas de 1000 datos y podra ir avanzando en las paginas. Ten en cuenta que si una pagina le sale vacia es porque el set de datos que escogio ya no tiene mas datos. Si queres visualizar todo, oprime Traer Todos los datos</p>
+        <button className="botonBonito" onClick={this.handleClick}>Traer Datos</button>
+        <button className="botonBonito" onClick={this.handleClick2}>Traer Todos los Datos</button>
+        <p>NOTA: si desea que la consulta sea mas rapida oprima el boton de traer datos. Esto le mostrara paginas de 1000 datos cada una y podra ir avanzando en las paginas. Tenga en cuenta que si una pagina le sale vacia es porque el set de datos que escogio ya no tiene mas datos. Si quere visualizar todos los datos en una sola visualizacion, oprima Traer Todos los datos</p>
         <Navio data={this.state.data}></Navio>
         {this.state.pidioPaginas &&
           <React.Fragment>
             <h1>Pagina</h1>
             <h3>{this.state.pagina}</h3>
             {(this.state.pagina > 1) &&
-              <button onClick={this.anterior}>Anterior</button>
+              <button className="botonBonito" onClick={this.anterior}>Anterior</button>
             }
-            <button onClick={this.siguiente}>Siguiente</button>
+            <button className="botonBonito" onClick={this.siguiente}>Siguiente</button>
           </React.Fragment>
         }
       </React.Fragment>
